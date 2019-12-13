@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import 'variable.css';
+@import '_elements.css';
+@import '_accessibility.css';
+
+.wp-block {
+	max-width: 1024px !important;
+}
+
+.wp-block[data-align="wide"] {
+	max-width: 1200px !important;
+}
+
+.wp-block[data-align="full"] {
+	max-width: none !important;
+}
+
+.editor-writing-flow {
+	font-size: 14px;
+}
+
+.blocks-gallery-item {
+	padding: 0;
+}
+
+.blocks-gallery-item::before {
+	content: normal;
+}

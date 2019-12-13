@@ -1,0 +1,3 @@
+.wp-block-columns > .editor-inner-blocks {
+	flex-grow: 1;
+}

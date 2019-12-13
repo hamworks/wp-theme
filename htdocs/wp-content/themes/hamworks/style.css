@@ -1,0 +1,8 @@
+/*
+Theme Name: HAMWORKS WordPress Starter
+Description: starter theme.
+Version: 1.0.0
+Text Domain: hamworks
+*/
+
+@import "./build/css/main.css";

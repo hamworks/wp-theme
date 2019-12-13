@@ -1,0 +1,17 @@
+@custom-media --window-small (max-width: 599px);
+@custom-media --window-medium (min-width: 600px);
+@custom-media --window-large (min-width: 960px);
+@custom-media --window-full (min-width: 1200px);
+
+:root {
+	--main-color: #2eb2ed;
+	--light-gray: #f5f5f5;
+	--white: #fff;
+	--black: #555;
+
+	--gray-border: #e7e7e7;
+
+	--padding: 15px;
+	--max-width: 970px;
+}
+
