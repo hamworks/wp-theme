@@ -10,42 +10,38 @@
     "scripts": {
         "start": "npm run bs & npm run watch",
         "bs": "browser-sync start --config bs-config.js",
-        "build": "npm run build:blocks:js && npm run build:block:css && npm run build:theme:js && npm run build:theme:css",
-        "build:block:css": "postcss $npm_package_config_blocks_dir/src/[^_]*.css --dir $npm_package_config_blocks_dir/build --verbose",
-        "build:blocks:js": "wp-scripts build $npm_package_config_blocks_dir/src/index.js --output-path=$npm_package_config_blocks_dir/build",
-        "build:blocks:js:start": "wp-scripts start $npm_package_config_blocks_dir/src/index.js --output-path=$npm_package_config_blocks_dir/build",
+        "build": "npm run build:theme:js && npm run build:theme:css",
         "build:theme:css": "postcss $npm_package_config_theme_dir/src/css/[^_]*.css --dir $npm_package_config_theme_dir/build/css --verbose",
         "build:theme:js": "wp-scripts build $npm_package_config_theme_dir/src/js/index.js --output-path=$npm_package_config_theme_dir/build/js",
         "build:theme:js:start": "wp-scripts start $npm_package_config_theme_dir/src/js/index.js --output-path=$npm_package_config_theme_dir/build/js",
-        "watch": "npm run build:block:css -- -w & npm run build:theme:css -- -w & npm run build:theme:js:start & npm run build:blocks:js:start",
+        "watch": "npm run build:theme:css -- -w & npm run build:theme:js:start",
         "eslint": "wp-scripts lint-js",
         "stylelint": "stylelint \"$npm_package_config_theme_dir/**/*.css\"",
         "test": "npm run eslint & npm run stylelint",
         "env": "wp-scripts env"
     },
     "config": {
-        "blocks_dir": "./htdocs/wp-content/mu-plugins/blocks",
-        "theme_dir": "./htdocs/wp-content/themes/hamworks"
+        "theme_dir": "./"
     },
     "dependencies": {
         "normalize.css": "^8.0.1"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^6.0.0",
+        "@wordpress/scripts": "^6.2.0",
         "@wordpress/browserslist-config": "^2.6.0",
         "browser-sync": "^2.26.7",
         "cross-env": "^6.0.3",
-        "css-loader": "^3.3.0",
+        "css-loader": "^3.4.2",
         "cssnano": "^4.1.10",
         "dotenv": "^8.2.0",
-        "postcss-cli": "^6.1.3",
+        "postcss-cli": "^7.1.0",
         "postcss-import": "^12.0.1",
         "postcss-loader": "^3.0.0",
         "postcss-omit-import-tilde": "^1.0.1",
         "postcss-preset-env": "^6.7.0",
         "postcss-url": "^8.0.0",
-        "style-loader": "^1.0.1",
-        "stylelint": "^12.0.0",
+        "style-loader": "^1.1.3",
+        "stylelint": "^13.0.0",
         "stylelint-config-standard": "^19.0.0"
     }
 }

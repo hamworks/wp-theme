@@ -48,7 +48,7 @@ if ! $(wp core is-installed); then
 	#  import theme unit test
 	#
 	if "${WP_THEME_UNIT_TEST}"; then
-
+		wp plugin install wordpress-importer --activate
 		curl ${WP_THEME_UNIT_TEST_URL} -o /tmp/themeunittestdata.wordpress.xml
 		wp import /tmp/themeunittestdata.wordpress.xml  --authors=create  --quiet
 		wp option update posts_per_page 5
