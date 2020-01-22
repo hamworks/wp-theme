@@ -1,81 +1,41 @@
-# WP with docker
+# HAM.WORKS
+
+A WordPress theme for HAM.WORKS.
+
+# Gutenberg theme
+This theme is designed to showcase what Gutenberg can do with regards to themes. It is intended as a work in progress, at least until v1 of the new editor (and maybe beyond).
+
+# Block focused
+If something isn't a block yet, this theme will not have it. As each block happens, the theme will gain that functionality.
+
+# Styling just like Gutenberg
+The idea of the default look for this theme is to as closely replicate that of the Gutenberg editor output as possible. As a result the focus is on that styling not creating a new look.. yet. As things grow, we may have styles and go further into what the theme can have... who knows.
 
 
-## getting started
-
-* Docker Compose が必要です。
-
-### Start Development
+## Getting Started
 
 ```bash
-npm install
+./tools/install.sh
 docker-compose up -d
 npm run start
 ```
 
-* note: plugin は composer で管理してます。
-
-
-### Stop
-
-```bash
-docker-compose stop
-```
-
-### Destroy docker images.
-
-```bash
-docker-compose down
-docker volume rm wp_wordpress
-docker volume rm wp_db-data
-```
-
-wp_ は、ディレクトリによってかわります。[docker-compose コマンド概要 — Docker-docs-ja 17.06.Beta ドキュメント](http://docs.docker.jp/compose/reference/overview.html) を参照して下さい。
-
-## Commands and Shell Scripts.
-
-### npm
-
-* `npm start` : BrowerSync / Webpack / postcss が立ち上がりファイルを監視します。
-* `npm run build`  : CSS と JS をビルドします。
-* `npm run production`: production ビルドを作成します。
-
-### sh
-
-#### Export SQL
-
-`wp-content/sql` に SQL ファイルをエクスポートします。
+### Build CSS / JS
 
 ```
-$ docker-compose run --rm cli bash /home/www-data/app/sh/export-sql.sh  
+npm run build
 ```
 
+### Run PHPUnit
 
-## Spec
-
-### CSS
-
-* [postcss-preset-env](https://preset-env.cssdb.org/) と PostCSS です。
-
-### JS
-
-* React + Babel してます。
-
-## config
-
-### .env
-
-* `WP_PORT`: WordPress Port. default: 5678.
-* `WP_VERSION`: WordPress のバージョン
-* `WP_THEME`: WordPress のテーマ
-
-### WordPress Accounts
-
-* `WP_ADMIN_USER`: admin
-* `WP_ADMIN_PASS`:password
-
-### WordPress Core Update Command
+To run PHPUnit test, install WordPress with `install-wp-tests.sh`.
+MySQL installation is required.
 
 ```
-docker-compose run --rm cli wp core update --version=5.2.1 --locale=ja --force
+# Install composer
+composer install
+# Install WordPress for tests.
+bash bin/install-wp-test.sh wp_unit_test root password
+# Run test.
+composer test
 ```
