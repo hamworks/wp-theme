@@ -47,6 +47,7 @@
 					'menu_class'      => 'nav__list',
 					'container'       => 'nav',
 					'container_class' => 'nav',
+					'fallback_cb'     => false,
 				)
 			);
 			?>

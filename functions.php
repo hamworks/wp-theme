@@ -133,8 +133,9 @@ add_action( 'after_setup_theme', 'hamworks_setup' );
  * @global int $content_width
  */
 function hamworks_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'hamworks_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'hamworks_content_width', 1000 );
 }
+
 add_action( 'after_setup_theme', 'hamworks_content_width', 0 );
 
 /**
@@ -155,6 +156,7 @@ function hamworks_widgets_init() {
 		)
 	);
 }
+
 add_action( 'widgets_init', 'hamworks_widgets_init' );
 
 /**
@@ -166,7 +168,26 @@ function hamworks_scripts() {
 	wp_enqueue_script( 'hamworks-script', get_template_directory_uri() . '/build/js/index.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 	wp_enqueue_script( 'hamworks-fontplus', 'https://webfont.fontplus.jp/accessor/script/fontplus.js?10lGcLVOyG8%3D&box=YPDkVlSgB4o%3D&aa=1&ab=2', array(), wp_get_theme()->get( 'Version' ), false );
 }
+
 add_action( 'wp_enqueue_scripts', 'hamworks_scripts' );
+
+
+function hamworks_custom_logo( $html ) {
+	if ( $html ) {
+		return $html;
+	}
+	if ( is_customize_preview() ) {
+		return $html;
+	}
+	return sprintf(
+		'<a href="%1$s" class="custom-logo-link" rel="home">%2$s</a>',
+		esc_url( home_url( '/' ) ),
+		'<img src="' . get_theme_file_uri( '/assets/images/logo.svg' ) . '" class="custom-logo" alt="' . get_bloginfo( 'name' ) . '" />'
+	);
+
+}
+
+add_filter( 'get_custom_logo', 'hamworks_custom_logo' );
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
