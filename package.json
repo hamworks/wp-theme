@@ -5,7 +5,7 @@
     "description": "",
     "repository": {
         "type": "git",
-        "url": "git@gitlab.ham.works:hamworks/hamworks.git"
+        "url": "git@github.com:team-hamworks/wp-theme.git"
     },
     "scripts": {
         "start": "npm run bs & npm run watch",
