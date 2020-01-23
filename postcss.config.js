@@ -4,6 +4,7 @@ const postcssPresetEnv = require( 'postcss-preset-env' );
 const atImport = require( 'postcss-import' );
 const url = require( 'postcss-url' );
 const cssnano = require( 'cssnano' );
+const pxtorem = require( 'postcss-pxtorem' );
 
 module.exports = {
 	map: mode === 'development',
@@ -18,7 +19,7 @@ module.exports = {
 		} ),
 		url(),
 		postcssPresetEnv( {
-			stage: 3,
+			stage: 1,
 			features: {
 				'nesting-rules': true,
 				'custom-media-queries': true,
@@ -26,6 +27,9 @@ module.exports = {
 			autoprefixer: {
 				grid: true,
 			},
+		} ),
+		pxtorem( {
+			replace: false,
 		} ),
 		mode === 'development' ? null : cssnano(),
 	],
