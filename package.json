@@ -27,21 +27,33 @@
         "normalize.css": "^8.0.1"
     },
     "devDependencies": {
-        "@wordpress/scripts": "^6.2.0",
         "@wordpress/browserslist-config": "^2.6.0",
+        "@wordpress/scripts": "^6.2.0",
         "browser-sync": "^2.26.7",
-        "cross-env": "^6.0.3",
-        "css-loader": "^3.4.2",
         "cssnano": "^4.1.10",
         "dotenv": "^8.2.0",
         "postcss-cli": "^7.1.0",
         "postcss-import": "^12.0.1",
-        "postcss-loader": "^3.0.0",
         "postcss-omit-import-tilde": "^1.0.1",
         "postcss-preset-env": "^6.7.0",
         "postcss-url": "^8.0.0",
-        "style-loader": "^1.1.3",
         "stylelint": "^13.0.0",
-        "stylelint-config-standard": "^19.0.0"
+        "stylelint-config-standard": "^19.0.0",
+        "stylelint-config-wordpress": "^16.0.0"
+    },
+    "release-it": {
+        "hooks": {
+            "before:bump": "npm run build",
+            "after:bump": "bash ./bin/create-release.sh ${version}"
+        },
+        "github": {
+            "release": true,
+            "assets": [
+                "hamworks.zip"
+            ]
+        },
+        "npm": {
+            "publish": false
+        }
     }
 }
