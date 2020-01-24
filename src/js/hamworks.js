@@ -51,7 +51,7 @@ HW = function() {
 			});
 
 			// リサイズ時に動くイベント
-			$window.on('resize', $.throttle(250, function() {
+			$window.on('resize', _.throttle(250, function() {
 				base.breakpointClassSwitch();
 			}));
 
