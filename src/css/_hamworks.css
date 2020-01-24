@@ -51,6 +51,13 @@ ul {
 	display: block;
 }
 
+.header__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
 .nav__list {
 	list-style: none;
 	margin: 0;
@@ -694,7 +701,6 @@ ul {
 		position: relative;
 	}
 	.header__inner {
-		height: 40px;
 		padding-top: 10px;
 		position: relative;
 		box-sizing: border-box;
@@ -817,7 +823,6 @@ ul {
 		height: 220px;
 		overflow: hidden;
 		position: relative;
-		margin-top: -40px;
 	}
 	.mainvisual__img img {
 		width: 100%;
@@ -1103,7 +1108,6 @@ ul {
 	}
 	.header {
 		position: absolute;
-		top: 0;
 		left: 0;
 	}
 	.header__inner {
@@ -1113,7 +1117,7 @@ ul {
 	.header__logo {
 		float: left;
 		width: 200px;
-		margin: 13px 0 0 0;
+		margin: 12px 0;
 	}
 	.sp-button {
 		display: none;

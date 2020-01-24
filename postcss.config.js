@@ -4,7 +4,7 @@ const postcssPresetEnv = require( 'postcss-preset-env' );
 const atImport = require( 'postcss-import' );
 const url = require( 'postcss-url' );
 const cssnano = require( 'cssnano' );
-const pxtorem = require( 'postcss-pxtorem' );
+//const pxtorem = require( 'postcss-pxtorem' );
 
 module.exports = {
 	map: mode === 'development',
@@ -27,9 +27,6 @@ module.exports = {
 			autoprefixer: {
 				grid: true,
 			},
-		} ),
-		pxtorem( {
-			replace: false,
 		} ),
 		mode === 'development' ? null : cssnano(),
 	],
