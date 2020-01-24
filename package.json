@@ -51,7 +51,7 @@
         "github": {
             "release": true,
             "assets": [
-                "hamworks.zip"
+                "hamworks-theme.zip"
             ]
         },
         "npm": {
