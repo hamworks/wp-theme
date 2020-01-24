@@ -13,6 +13,6 @@ sed -i '' -e "s/^Version: .*/Version: ${version}/g" style.css;
 
 rsync -a --exclude-from=.distignore ./ ./distribution/
 cd distribution
-zip -r ../hamworks.zip ./
+zip -r ../hamworks-theme.zip ./
 cd ../
 rm -rf distribution
