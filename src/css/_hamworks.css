@@ -2,6 +2,8 @@
 
 html {
 	font-size: 62.5%;
+	overflow-x: hidden;
+
 }
 
 body {
@@ -10,6 +12,7 @@ body {
 	background-color: #fff;
 	-webkit-text-size-adjust: none;
 	text-size-adjust: none;
+	overflow-x: hidden;
 	line-height: 1.71;
 	font-family: "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック体", YuGothic, sans-serif;
 	font-weight: 200;
