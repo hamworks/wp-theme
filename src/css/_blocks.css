@@ -32,3 +32,39 @@
 		margin: 0 0 30px;
 	}
 }
+
+.schedule-table {
+	width: 100%;
+}
+.schedule-table img {
+	width: 20px;
+	vertical-align: middle;
+}
+.schedule-table thead tr:first-child th,
+.schedule-table thead tr:first-child td {
+	border-top: 0;
+}
+.schedule-table th,
+.schedule-table td {
+	padding: 15px 5px;
+	text-align: center;
+	vertical-align: middle;
+	border-top: 2px solid #a4dcde;
+	border-left: 2px solid #a4dcde;
+	box-sizing: border-box;
+}
+.schedule-table th:first-child,
+.schedule-table td:first-child {
+	border-left: 0;
+}
+.schedule-table th {
+	color: #056e76;
+	background-color: #d4efef;
+}
+.schedule-table td {
+	color: #333;
+	background-color: #fff;
+}
+.schedule-table thead {
+	color: #056e76;
+}
