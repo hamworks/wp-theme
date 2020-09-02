@@ -688,23 +688,31 @@ table {
 /* 20200902 add */
 .bnr-hokkaido-style {
 	width: 100%;
-	max-width: 380px;
+	max-width: 420px;
 	height: 80px;
 	margin: 0 auto 30px;
 }
 .bnr-hokkaido-style a {
 	box-sizing: border-box;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	padding-left: 19%;
-	background: #25b7c0 url(https://cdn.getshifter.co/72a3c61876c363db8acbe25bbe2df36e566de29e/uploads/2020/09/img-mask-hamster-01.png) 7% center / 50px 60px no-repeat;
+	background-color: #25b7c0;
 	color: #FFF;
 	font-size: 20px;
 	line-height: 1.2;
 	cursor: pointer;
 	transition-duration: .5s;
+}
+.bnr-hokkaido-style a span {
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+	height: 100%;
+	background: url(https://cdn.getshifter.co/72a3c61876c363db8acbe25bbe2df36e566de29e/uploads/2020/09/img-mask-hamster-01.png) left center / 50px 60px no-repeat;
+	padding-left: 55px;
 }
 .bnr-hokkaido-style a:hover {
 	background-color: #056e76;
