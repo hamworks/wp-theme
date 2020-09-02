@@ -46,8 +46,11 @@ jobs:
     - name: create archive
       env:
         PACKAGE_NAME: "hamworks-theme"
-        FILES_TO_ARCIVE: "*.php *.css assets/ template-parts/ inc/"
-      run: zip -r ${PACKAGE_NAME}.zip ${FILES_TO_ARCIVE}
+        FILES_TO_ARCIVE: "*.php *.css assets/ template-parts/ inc/ build/"
+      run: |
+        npm install
+        npm run build
+        zip -r ${PACKAGE_NAME}.zip ${FILES_TO_ARCIVE}
 
     # upload zip arvive by ghr.
     # `secrets.GITHUB_TOKEN` for using ghr is issued temporarily when executing action. No special settings are required.
