@@ -15,6 +15,9 @@
 <footer class="footer">
 	<div class="footer__nav">
 		<div class="footer__inner">
+			<p class="bnr-hokkaido-style"><a hrer="/hokkaido-style/">「新北海道スタイル」安心宣言</a></p>
+		</div>
+		<div class="footer__inner">
 			<?php
 			wp_nav_menu(
 				array(

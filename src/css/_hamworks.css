@@ -685,6 +685,62 @@ table {
 	margin: 0 5px;
 }
 
+/* 20200902 add */
+.bnr-hokkaido-style {
+	width: 100%;
+	max-width: 380px;
+	height: 80px;
+	margin: 0 auto 30px;
+}
+.bnr-hokkaido-style a {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	padding-left: 19%;
+	background: #25b7c0 url(https://cdn.getshifter.co/72a3c61876c363db8acbe25bbe2df36e566de29e/uploads/2020/09/img-mask-hamster-01.png) 7% center / 50px 60px no-repeat;
+	color: #FFF;
+	font-size: 20px;
+	line-height: 1.2;
+	cursor: pointer;
+	transition-duration: .5s;
+}
+.bnr-hokkaido-style a:hover {
+	background-color: #056e76;
+}
+.hokkaido-style--fig {
+	margin: 50px 0 0;
+	padding: 80px 0 50px;
+	background-color: #fcfcfc;
+	text-align: center;
+}
+.hokkaido-style--fig img {
+	width: 250px;
+	height: auto;
+}
+.hokkaido-style--lists {
+	margin: 0 0 100px;
+	padding: 0 20% 5%;
+	background-color: #fcfcfc;
+	font-size: 18px;
+	list-style: none;
+}
+.hokkaido-style--lists > li {
+	position: relative;
+	margin: 0 0 10px;
+	padding-left: 30px;
+	counter-increment: number;
+}
+.hokkaido-style--lists > li::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: counter(number) ".";
+}
+
+
+
 @media screen and (max-width: 768px) {
 	/* ---------------------------
    * Tablet
@@ -1599,4 +1655,23 @@ table {
 		border-bottom: 2px solid #e5e5e5;
 		padding: 30px 0;
 	}
+
+	/* 20200902 add */
+	.bnr-hokkaido-style a {
+		background-position: 5%;
+		font-size: 17px;
+	}
+	.hokkaido-style--fig {
+		margin: 30px 0 0;
+		padding: 50px 0 30px;
+	}
+	.hokkaido-style--fig img {
+		width: 180px;
+	}
+	.hokkaido-style--lists {
+		margin: 0 0 50px;
+		padding: 0 10% 5%;
+		font-size: 16px;
+	}
+
 }
