@@ -17,12 +17,16 @@ jobs:
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idruns-on
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idsteps
     steps:
 
     # [official action] clone code to workspace
     # https://github.com/actions/checkout
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
 
     # install modules by composer. remove this step it if no needed.
     # - name: composer install
@@ -47,10 +51,12 @@ jobs:
       env:
         PACKAGE_NAME: "hamworks-theme"
         FILES_TO_ARCIVE: "*.php *.css assets/ template-parts/ inc/ build/"
-      run: |
-        npm install
-        npm run build
-        zip -r ${PACKAGE_NAME}.zip ${FILES_TO_ARCIVE}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm install
+    - run: npm run build
+    - run: zip -r ${PACKAGE_NAME}.zip ${FILES_TO_ARCIVE}
 
     # upload zip arvive by ghr.
     # `secrets.GITHUB_TOKEN` for using ghr is issued temporarily when executing action. No special settings are required.
