@@ -58,5 +58,6 @@
 </div><!-- /.wrap -->
 
 <?php wp_footer(); ?>
+<script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "fbb38ce02b406584972a76daef8cee7a88840b32fa1fff45d7e8c74afef75595", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
 </body>
 </html>
