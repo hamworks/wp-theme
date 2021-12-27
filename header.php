@@ -19,6 +19,8 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
 	<script src="https://cdn.pagesense.io/js/hamworks/6fb765b284fd454b8f558c67e01d3dcb.js"></script>
+	<script src="https://cdn.lr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+	<script>window.LogRocket && window.LogRocket.init('hw/hamworks');</script>
 </head>
 
 <body <?php body_class(); ?>>
